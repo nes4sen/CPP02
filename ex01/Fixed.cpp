@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosahimi <nosahimi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nosahimi <nosahimi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:55:09 by nosahimi          #+#    #+#             */
-/*   Updated: 2026/01/19 00:18:41 by nosahimi         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:42:35 by nosahimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-const int Fixed::_Fract = 8;
 
 
 Fixed::Fixed() : _RawBits(0)
@@ -68,12 +66,12 @@ void Fixed::setRawBits(int const raw)
 
 
 
-
 float Fixed::toFloat(void) const
 {
 
 	return (float)_RawBits / (1 << _Fract);
 }
+
 
 int Fixed::toInt(void) const
 {
@@ -85,3 +83,5 @@ std::ostream &operator<<( std::ostream &o, Fixed const &i )
 	o << i.toFloat();
 	return o;
 }
+
+
